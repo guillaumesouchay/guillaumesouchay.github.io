@@ -57,12 +57,13 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter "@GSouchay"
-facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+  username               : &twitter 
+  app_id                 : "GSouchay"
+#facebook:
+ # username               :
+  #app_id                 :
+  #publisher              :
+#og_image                 :  # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
