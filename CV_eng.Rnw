@@ -1,0 +1,222 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,a4paper,sans]{moderncv} % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+% \usepackage{natbib} %natbib
+% \usepackage[style=apa]{biblatex}
+\usepackage{xcolor}
+\usepackage{enumitem}
+% moderncv themes 
+\moderncvstyle{casual} % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{orange} % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault} % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{} % uncomment to suppress automatic page numbering for CVs longer than one page
+
+%%%%%%%%%%%%%%%%
+% character encoding
+\usepackage[utf8]{inputenc} % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8} % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+%%%%%%%%%%%%%%%%
+% adjust the page margins
+\usepackage[scale=0.90]{geometry}
+\setlength{\hintscolumnwidth}{3.5cm} % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm} % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+%%%%%%%%%%%%%%%%
+% personal data
+\name{Guillaume}{SOUCHAY}
+\title{Research fellow in population dynamics \& interspecific relationships \\ French Office for Biodiversity}                               % optional, remove / comment the line if not wanted
+\address{8 Bd Albert Einstein - Bat.B - CS 42355}{44323 NANTES CEDEX 3}{FRANCE}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+33.(0).6.47.79.47.02} % optional, remove / comment the line if not wanted
+\phone[fixed]{+33.(2).51.25.03.91} % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012} % optional, remove / comment the line if not wanted
+\email{guillaume.souchay@ofb.gouv.fr} % optional, remove / comment the line if not wanted
+%\homepage{www.johndoe.com} % optional, remove / comment the line if not wanted
+%\extrainfo{additional information} % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{me} % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote} % optional, remove / comment the line if not wanted
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+ \renewcommand{\refname}{Articles}
+
+\usepackage{xstring}
+\let\originalbibitem\bibitem
+\def\bibitem#1#2\par{%
+\noexpandarg \originalbibitem{#1}
+\StrSubstitute{#2}{Souchay}{{\color{black}\textbf{Souchay}}}[\mytmpa]
+\expandafter\StrSubstitute\expandafter{\mytmpa}{Sameh}{{\color{green}\textbf{Sameh}}} \par}
+
+
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+% \SweaveOpts{concordance=TRUE}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{external identifier}
+\cvitem{ORCID}{\href{https://orcid.org/0000-0003-0214-9362}{ID 0000-0003-0214-9362}}
+\cvitem{ResearchGate}{\href{https://www.researchgate.net/profile/Guillaume_Souchay}{Guillaume Souchay}}
+\cvitem{ScholarGoogle}{\href{https://scholar.google.fr/citations?user=UXCUQ44AAAAJ&hl=fr}{Citations and H factor}}
+\cvitem{Publons}{\href{https://publons.com/researcher/1182003/g-souchay/}{Editor and reviewer activity}}
+
+\section{Research Interest}
+\cvitem{}{Population dynamics and management of harvested species}
+\cvitem{}{Development and applications of population dynamics models}
+
+\section{Research Experiences}
+\cventry{Mar 2017 -- Now}{Research fellow in population dynamics of European hare}{Office Français de la Biodiversité}{Nantes - FR}{}{Investigation of population dynamics of European brown hare in France and link between demography and habitat, climate, anthropogenic activities. \newline{Scientific head of the French Hare Network.}} 
+
+\cventry{Mar 2015 -- Mar 2017}{Research fellow in population dynamics of small game species}{Office National de la Chasse et de la Faune Sauvage}{St Benoist - FR}{}{Estimation of demographics parameters for several small sedentary game species such as hares and red-legged partridge.\newline{} Development of an integrated population model for the red-legged partridge.}
+
+\cventry{Nov 2013 -- Feb 2015}{Post-doctoral fellow}{Swiss Ornithological Institute}{Sempach - CH}{}{Effect of hunting on Northern Lapwing population. \newline{} Variations  in  demographical  parameters  in  a  European  Hoopoe 
+population.}
+\cvitem{Supervisor}{\href{mailto:michael.schaub@vogelwarte.ch}{\color{blue}{Michael Schaub}}}
+
+\cventry{Apr 2013 -- Sep 2013}{Post-doctoral fellow}{ CEFE-CNRS and EAL  647,  CNRS  Strasbourg,  Centre  de  Recherche Monaco}{Montpellier - FR}{}{Reproductive strategies in the King penguin.}
+\cvitem{Supervisor}{\href{mailto:roger.pradel@cefe.cnrs.fr}{\color{blue}{Roger Pradel}} and \href{mailto:celine.lebohec@gmail.com}{\color{blue}{Céline Le Bohec}}}
+
+\cventry{Sep 2009 -- Mar 2013}{Ph.D. thesis with co-supervision}{Laval University, QC, CA and Montpellier University, FR}{}{}{Non-canalized  aspects  of  greater  snow  goose  population  dynamics: 
+breeding propensity and juvenile survival probability}
+\cvitem{Supervisor}{\href{mailto:gilles.gauthier@bio.ulaval.ca}{\color{blue}{Gilles Gauthier}} and \href{mailto:roger.pradel@cefe.cnrs.fr}{\color{blue}{Roger Pradel}}}
+
+\cventry{Feb 2008 -- Sep 2008}{M.Sc. training}{Tour du Valat}{Le Sambuc, Arles - FR}{}{Sex-dependent  juvenile  survival  estimation  in  a  dimorphic  species:  the 
+case of the greater flamingo Phoenicopterus roseus}
+\cvitem{Supervisor}{\href{mailto:bechet@tourduvalat.fr}{\color{blue}{Arnaud Béchet}} and \href{mailto:barbraud@cebc.cnrs.fr}{\color{blue}{Christophe Barbraud}}}
+
+\cventry{Apr 2007 -- Jul 2007}{M.Sc. training}{CNRS – Université Rennes 1}{Rennes - FR}{}{Propagation  dynamic  of  the  sacred  ibis  (Threskiornis  aethiopicus)  in 
+Western France: seasonal and temporal trends}
+\cvitem{Supervisor}{\href{mailto:loic.marion@univ-rennes1.fr}{\color{blue}{Loïc Marion}}}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+
+\nocite{ResendizInfante2020}
+\nocite{Folliot2020}
+\nocite{Arroyo2020a}
+\nocite{Souchay2018a}
+\nocite{Souchay2018}
+\nocite{Souchay2018b}
+\nocite{Mauvy2017}
+\nocite{Letty2017}
+\nocite{Souchay2016}
+\nocite{Wijk2016}
+\nocite{Champagnon2016a}
+\nocite{Champagnon2016}
+\nocite{Souchay2015}
+\nocite{Souchay2014a}
+\nocite{Souchay2014}
+\nocite{Souchay2013a}
+\bibliographystyle{ieeetr}
+\bibliography{C:/Users/guillaume.souchay/Documents/Biblio/bibtex/BiblioGS} % 'publications' is the name of a BibTeX file
+
+\section{Peer-review experience}
+\cvitem{since 2018}{Academic editor for PLOS ONE}
+\cvitem{since 2012}{45 reviews}
+\cvitem{Journals}{Animal Conservation, Ecology, Ecology and Evolution, Evolution, Global Change Biology, Ibis, Journal of Animal Ecology, Journal of Applied Ecology, Journal of Avian Biology, Journal of Field Ornithology, Methods in Ecology and Evolution, Oecologia, PeerJ, PLOS ONE, Population Ecology, Proceedings of the Royal Society B,The Auk, The Journal of Wildlife Management}
+\cvitem{statistics}{\href{https://publons.com/a/1182003/}{\color{blue}{Publons profile}}}
+
+\section{Workshop}
+\cventry{2016}{Advanced Techniques and Recent Developments in Distance Sampling with Spatial Modelling}{St Andrews University}{St Andrews - Scotland}{}{}
+\cvitem{Teachers}{E Rexstad, L Thomas, D Borchers, L Burt, L Marshall, Gui Bortolotto}
+\cventry{2015}{Bayesian integrated population modeling (IPM) using BUGS and JAGS}{Tour du Valat}{Arles - France}{}{}
+\cvitem{Teachers}{M Schaub, M Kéry}
+\cventry{2014}{Matrix Population Models for Population Management and Conservation}{CEFE-CNRS}{Montpellier - France}{}{}
+\cvitem{Teachers}{J-D Lebreton, O Gimenez, D Koons}
+\cventry{2013}{Bayesian population analysis using WinBUGS}{Swiss Ornithological Institute}{Sempach - Switzerland}{}{}
+\cvitem{Teachers}{M Schaub, M Kéry}
+\cventry{2009-2010}{Modelling Individual Histories with State Uncertainty}{CEFE-CNRS}{Montpellier - France}{}{}
+\cvitem{Teachers}{R Pradel, J-D Lebreton, O Gimenez, R Choquet}
+
+\section{International conference}
+\cventry{2017}{Investigating survival of wild and hand-reared red-legged partridges in Southern France}{33rd International Union of Game Biologist}{Montpellier - France}{}{}
+\cvitem{Lead author}{G Souchay, A Besnard and F Ponce}
+\cvitem{}{Oral communication}
+
+\cventry{2017}{Exploring predator-prey relationship through experimental reduction of red fox and its effect on brown hare population dynamics}{33rd International Union of Game Biologist}{Montpellier - France}{}{}
+\cvitem{Co-author}{J Letty, G Souchay, B Baudoux, Y Bray, Y Léonard, B Mauvy, T Mendoza, R Péroux and J-S Guitton}
+\cvitem{}{Oral communication}
+
+\cventry{2017}{The French Hare Network: a tool to study European hare populations dynamics on a large scale }{33rd International Union of Game Biologist}{Montpellier - France}{}{}
+\cvitem{Co-author}{B Mauvy, G Souchay, J-P Arnauduc and J-S Guitton}
+\cvitem{}{Poster}
+
+\cventry{2014}{Use  of  multi-events  framework  to  explore  breeding  strategies  in  a  long-breeding-cycle 
+species}{International Statistical Ecology Conference 2014}{Montpellier - France}{}{}
+\cvitem{Lead author}{G Souchay, R Pradel and C Le Bohec}
+\cvitem{}{Oral communication}
+
+\cventry{2013}{A  new  approach  to  account  for  temporary  emigration  using  a  multi-event  framework}{EURING Conference}{Athens, Ga - USA}{}{}
+\cvitem{Lead author}{G Souchay, R Pradel and G Gauthier}
+\cvitem{}{Oral communication}
+
+\section{Skills}
+\cvitem{Analysis}{Capture-Mark-Recapture ; Matrix models ; N-mixture models ; Distance Sampling ; Bayesian hierarchical modelling}
+\cvitem{Software}{Capture-Mark-Recapture: MARK, E-SURGE, U-CARE; R packages: JAGS, WinBUGS, Rmark, Popbio, lme4, nlme}
+\cvitem{Fieldwork}{Breeding survey, goose capture-marking, small rodent live/dead trapping}
+
+\section{Education}
+\cventry{2009--2013}{Ph.D in Ecology and Population biology}{Laval University}{Québec - CA}{}{Co-supervision with Montpellier University, Montpellier - FR}  % arguments 3 to 6 can be left empty
+\cventry{2007--2008}{M.Sc Earth Sciences, Environment and Ecology speciality Ecology, Biodiversity, Evolution}{Université Pierre et Marie Curie}{Paris - FR }{\textit{Magna cum laude}}{2nd year}
+\cventry{2006--2007}{M.Sc speciality Organism, Population and Ecosystem biology}{Université de Rennes 1}{Rennes - FR }{\textit{Magna cum laude}}{1st year}
+\cventry{2003--2006}{B.Sc Biology speciality Organism biology.}{Université de Rennes 1}{Rennes - FR }{\textit{Magna cum laude}}{}
+
+\section{Languages}
+\cvitem{French}{native}
+\cvitem{English}{B2-C1}
+\cvitem{German}{A2}
+
+
+\section{Interests}
+\cvitem{Sport}{Running, Soccer}
+\cvitem{Hiking}{Day-trip}
+\cvitem{Photography}{Wildlife photography}
+\cvitem{Cooking}{traditionnal French recipes, savoury dish}
+% 
+% 
+% \section{Extra 2}
+% \cvlistdoubleitem{Item 1}{Item 4}
+% \cvlistdoubleitem{Item 2}{Item 5}
+% \cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+
+% \section{References}
+% \begin{cvcolumns}
+%   \cvcolumn[0.3]{Name}{\begin{itemize}\item \href{mailto:jean-sebastien.guitton@oncfs.gouv.fr}{\color{blue}{Jean-Sébastien Guitton}} \item \href{mailto:michael.schaub@vogelwarte.ch}{\color{blue}{Michael Schaub}}\item \href{mailto:gilles.gauthier@bio.ulaval.ca}{\color{blue}{Gilles Gauthier}}\item \href{mailto:roger.pradel@cefe.cnrs.fr}{\color{blue}{Roger Pradel}}\end{itemize}}
+%   \cvcolumn{Position}{\begin{itemize}\item[] Current head of Research team \item[] PI at Swiss Ornithological Institute (CH) \item[] Professor at Laval University (Qc,CA) \item[] Director of research at CNRS (FR) \end{itemize}}
+% \end{cvcolumns}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+
+                         
+
+\clearpage
+
+\end{document}
+
+
+%% end of file `template.tex'.
